@@ -15,21 +15,50 @@
     <button onclick="myFunction2()">Original color filter!</button><br><br>
     <button onclick="myFunction3()">New color filter!</button><br><br>    
     
+    
+
     <video id="myImg" controls poster="./poster.png">
-      <source src="./652333414.mp4" type='video/mp4'>    
+      <source src="./652333414.mp4">    
     </video>
     
     <p><strong>Note:</strong> The filter property does not work in Internet Explorer or Edge 12.</p>
     
     <script>
-    function myFunction() {
-      document.getElementById("myImg").style.filter = "grayscale(100%)";
-    }
-    function myFunction2() {
-      document.getElementById("myImg").style.filter = "grayscale(0%)";
-    }
+
+      var videoSrc = ''
+      function myFunction() {
+        document.getElementById("myImg").style.filter = "grayscale(100%)";
+      }
+      function myFunction2() {
+        document.getElementById("myImg").style.filter = "grayscale(0%)";
+      }
+    
+    </script>
+
+    
+
+    <button id="upload_widget" class="cloudinary-button">Upload Video</button>
+
+    <script src="https://widget.cloudinary.com/v2.0/global/all.js" type="text/javascript"></script>  
+
+    <script type="text/javascript">  
+      var myWidget = cloudinary.createUploadWidget({
+        cloudName: 'markhamm1', 
+        uploadPreset: 'aup5hmtv'}, (error, result) => { 
+          if (!error && result && result.event === "success") { 
+            // console.log('Done! Here is the image info: ', result.info);
+            videoSrc = result.info.secure_url;
+            console.log(videoSrc);
+            
+          }
+        }
+      )
+
+      document.getElementById("upload_widget").addEventListener("click", function(){
+          myWidget.open();
+        }, false);
     </script>
     
-    </body>
+  </body>
   
 </html>
