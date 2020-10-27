@@ -5,8 +5,8 @@ const progressBar = player.querySelector(".progress__filled");
 const toggle = player.querySelector(".toggle");
 const skipButtons = player.querySelectorAll("[data-skip]");
 const ranges = player.querySelectorAll(".player__slider");
-const canvas = document.querySelector('.photo');
-const ctx = canvas.getContext('2d');
+const canvas = document.querySelector(".photo");
+const ctx = canvas.getContext("2d");
 
 /* Build out functions */
 function togglePlay() {
@@ -71,11 +71,10 @@ function myFunction2() {
 }
 function myFunction3() {
   document.getElementById("myImg").style.filter = "sepia(100%)";
-}  
+}
 function myFunction4() {
   document.getElementById("myImg").style.filter = "invert(100%)";
-}  
-
+}
 
 /* Hook up the event listners */
 video.addEventListener("click", togglePlay);
