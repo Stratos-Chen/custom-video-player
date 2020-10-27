@@ -64,16 +64,16 @@ function paintToCanvas() {
 }
 
 function myFunction() {
-  document.getElementById("myImg").style.filter = "grayscale(100%)";
+  document.getElementById("videoPlayerVideo").style.filter = "grayscale(100%)";
 }
 function myFunction2() {
-  document.getElementById("myImg").style.filter = "grayscale(0%)";
+  document.getElementById("videoPlayerVideo").style.filter = "grayscale(0%)";
 }
 function myFunction3() {
-  document.getElementById("myImg").style.filter = "sepia(100%)";
+  document.getElementById("videoPlayerVideo").style.filter = "sepia(100%)";
 }  
 function myFunction4() {
-  document.getElementById("myImg").style.filter = "invert(100%)";
+  document.getElementById("videoPlayerVideo").style.filter = "invert(100%)";
 }  
 
 

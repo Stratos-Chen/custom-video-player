@@ -21,10 +21,6 @@
   <button onclick="myFunction4()">Negative color filter!</button><br><br>   
   <button onclick="myFunction2()">Original color filter!</button><br><br> 
 
-  <!-- <video id="myImg" controls poster="./poster.png">
-    <source src="./652333414.mp4" type='video/mp4'>    
-  </video>   -->
-
 
    <div class="player">
      <video id="videoPlayerVideo" class="player__video viewer">
@@ -98,16 +94,16 @@ function scrub(e) {
 }
 
 function myFunction() {
-  document.getElementById("myImg").style.filter = "grayscale(100%)";
+  document.getElementById("videoPlayerVideo").style.filter = "grayscale(100%)";
 }
 function myFunction2() {
-  document.getElementById("myImg").style.filter = "grayscale(0%)";
+  document.getElementById("videoPlayerVideo").style.filter = "grayscale(0%)";
 }
 function myFunction3() {
-  document.getElementById("myImg").style.filter = "sepia(100%)";
+  document.getElementById("videoPlayerVideo").style.filter = "sepia(100%)";
 }  
 function myFunction4() {
-  document.getElementById("myImg").style.filter = "invert(100%)";
+  document.getElementById("videoPlayerVideo").style.filter = "invert(100%)";
 }  
 
 /* Hook up the event listners */
