@@ -7,6 +7,22 @@
 </head>
 <body>
 
+  <canvas class="photo"></canvas>
+  <!-- <video class="player"></video>   -->
+
+  <!-- <DIV class="test">
+    <p>TESTING 1, 2, 3!</p>
+  </DIV> -->
+
+  <button onclick="myFunction()">Activate Black & White filter!</button><br><br>
+  <button onclick="myFunction3()">Sepia color filter!</button><br><br>   
+  <button onclick="myFunction4()">Negative color filter!</button><br><br>   
+  <button onclick="myFunction2()">Original color filter!</button><br><br> 
+
+  <video id="myImg" controls poster="./poster.png">
+    <source src="./652333414.mp4" type='video/mp4'>    
+  </video>  
+
    <div class="player">
      <video class="player__video viewer" src="652333414.mp4"></video>
 
@@ -28,6 +44,8 @@
      /*Get our elements */
 const player = document.querySelector(".player");
 const video = player.querySelector(".viewer");
+const canvas = document.querySelector('.photo');
+const ctx = canvas.getContext('2d');
 const progress = player.querySelector(".progress");
 const progressBar = player.querySelector(".progress__filled");
 const toggle = player.querySelector(".toggle");
@@ -35,6 +53,13 @@ const skipButtons = player.querySelectorAll("[data-skip]");
 const ranges = player.querySelectorAll(".player__slider");
 
 /* Build out functions */
+
+function paintToCanvas() {
+  const width = video.videoWidth;
+  const height = video.videoHeight;
+  console.log(width, height);
+}
+
 function togglePlay() {
   if (video.paused) {
     video.play();
@@ -66,6 +91,19 @@ function scrub(e) {
   video.currentTime = scrubTime;
   console.log(e);
 }
+
+function myFunction() {
+  document.getElementById("myImg").style.filter = "grayscale(100%)";
+}
+function myFunction2() {
+  document.getElementById("myImg").style.filter = "grayscale(0%)";
+}
+function myFunction3() {
+  document.getElementById("myImg").style.filter = "sepia(100%)";
+}  
+function myFunction4() {
+  document.getElementById("myImg").style.filter = "invert(100%)";
+}  
 
 /* Hook up the event listners */
 video.addEventListener("click", togglePlay);
