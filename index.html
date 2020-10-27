@@ -141,13 +141,12 @@ recognition.start();
             videoSrc = result.info.secure_url;
             console.log(videoSrc);
             // document.querySelector("#videoPlayerVideo > source").src = result.info.secure_url;
+            document.getElementById("videoSource").src = videoSrc;
+            document.getElementById("videoPlayerVideo").load();
+      
           }
         }
       )
-      function replaceVideo() {
-        document.getElementById("videoSource").src = videoSrc;
-        document.getElementById("videoSource").load();
-      }
 
       document.getElementById("upload_widget").addEventListener("click", function(){
           myWidget.open();
@@ -155,4 +154,4 @@ recognition.start();
     </script>
 </body>
 </html> 
->>>>>>> 1a1e644e5fea3a34eade98196a635b1619302b69
+
