@@ -16,10 +16,10 @@
     <p>TESTING 1, 2, 3!</p>
   </DIV> -->
 
-  <button onclick="myFunction()">Activate Black & White filter!</button><br><br>
-  <button onclick="myFunction3()">Sepia color filter!</button><br><br>   
-  <button onclick="myFunction4()">Negative color filter!</button><br><br>   
-  <button onclick="myFunction2()">Original color filter!</button><br><br> 
+  <button onclick="blackAndWhite()" id="button1">Activate Black & White filter!</button><br><br>
+  <button onclick="sepia()" id="button2">Sepia color filter!</button><br><br>   
+  <button onclick="negativeColor()" id="button3">Negative color filter!</button><br><br>   
+  <button onclick="originalColor()" id="button4">Original color filter!</button><br><br> 
 
 
    <div class="player">
@@ -93,16 +93,16 @@ function scrub(e) {
   console.log(e);
 }
 
-function myFunction() {
+function blackAndWhite() {
   document.getElementById("videoPlayerVideo").style.filter = "grayscale(100%)";
 }
-function myFunction2() {
+function originalColor() {
   document.getElementById("videoPlayerVideo").style.filter = "grayscale(0%)";
 }
-function myFunction3() {
+function sepia() {
   document.getElementById("videoPlayerVideo").style.filter = "sepia(100%)";
 }  
-function myFunction4() {
+function negativeColor() {
   document.getElementById("videoPlayerVideo").style.filter = "invert(100%)";
 }  
 
@@ -154,6 +154,21 @@ recognition.addEventListener("result", (e) => {
     }
     else if (str === 'pause'){
       video.pause();
+    }
+    else if (str === 'black and white'){
+      blackAndWhite();
+    }
+    else if (str === 'sepia'){
+      sepia();
+    }
+    else if (str === 'negative'){
+      negativeColor();
+    }
+    else if (str === 'original color'){
+      originalColor();
+    }
+    else if (str === 'upload video'){
+      myWidget.open();
     }
   }
 
